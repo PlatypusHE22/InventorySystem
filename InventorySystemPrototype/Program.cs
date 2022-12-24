@@ -10,31 +10,18 @@ internal class Program
         Item sword = new("Steel Sword", 1200, ItemType.Weapon);
         Item bow = new("Hunting Bow", 850, ItemType.Weapon);
         Item bread = new("Bread", 65, ItemType.Food);
-        Item healPotion = new("Health Potion", 450, ItemType.Potion);
-        Item manaPotion = new("Mana Potion", 550, ItemType.Potion);
+        Item healPotion = new("Health Potion", 450, ItemType.Potion, true, 5);
+        Item manaPotion = new("Mana Potion", 550, ItemType.Potion, true, 5);
+        Item goldCoin = new("Gold Coin", 1, ItemType.Misc, true, 100);
 
         Inventory inventory = new();
 
-        inventory.AddItem(sword);
-        inventory.AddItem(healPotion);
-        inventory.AddItem(bread);
-        inventory.AddItem(sword);
 
-        inventory.AddItem(manaPotion, 10);
-        inventory.AddItem(manaPotion, 11);
-        inventory.AddItem(healPotion, 12);
-
-        inventory.AddItem(bow);
-        inventory.AddItem(bow);
-        inventory.AddItem(healPotion);
+        inventory.AddItem(sword, 10);
+        inventory.AddItem(bow, 12);
+        inventory.AddItem(manaPotion, 13);
+        inventory.AddItem(healPotion, 15);
         
-        inventory.Log();
-
-        Console.WriteLine("\n\n\n");
-
-        inventory.SwapItems(1, 2);
-        inventory.SwitchItems(bow, 0);
-        
-        inventory.Log();
+        inventory.Log();        
     }
 }
